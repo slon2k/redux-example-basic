@@ -1,17 +1,20 @@
 import React from 'react';
+import './todo-list.css'
 
-const TodoList = (todos) => {
-    const todoList = todos.map((item) => {
+const TodoList = ({todos, toggleTodo}) => {
+
+    const todoListItems = todos.map((item) => {
+        const itemClass = item.completed ? 'todo-list__item todo-list__item_completed' : 'todo-list__item';
         return(
-            <li>
+            <li key={item.id} className={itemClass} onClick={() => toggleTodo(item.id)}>
                 {item.text}
             </li>
         )
     })
     return(
-        <ul>
-
-        </ul>
+        <ol className={'todo-list'}>
+            {todoListItems}
+        </ol>
     )
 }
 
