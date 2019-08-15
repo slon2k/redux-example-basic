@@ -7,7 +7,8 @@ export const Filters = {
 export const actionTypes = {
     SET_FILTER: 'SET_FILTER',
     ADD_TODO: 'ADD_TODO',
-    TOGGLE_TODO: 'TOGGLE_TODO'
+    TOGGLE_TODO: 'TOGGLE_TODO',
+    REMOVE_TODO: 'REMOVE_TODO'
 };
 
 let nextId = 0;
@@ -22,6 +23,10 @@ export const addTodo = (text) => {
 
 export const toggleTodo = (id) => {
     return { type: actionTypes.TOGGLE_TODO, id}
+}
+
+export const removeTodo = (id) => {
+    return { type: actionTypes.REMOVE_TODO, id}
 }
 
 

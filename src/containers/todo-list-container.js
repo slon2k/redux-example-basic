@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoList from "../components/todo-list";
 import { connect } from "react-redux";
-import { Filters, toggleTodo } from '../actions'
+import { Filters, toggleTodo, removeTodo } from '../actions'
 
 const filteredTodos = (todos, filter) => {
     switch (filter) {
@@ -13,7 +13,6 @@ const filteredTodos = (todos, filter) => {
             return todos.filter(item => item.completed)
         default:
             throw new Error('Unknown filter: ' + filter)
-
     }
 }
 
@@ -22,7 +21,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    toggleTodo: id => dispatch(toggleTodo(id))
+    toggleTodo: id => dispatch(toggleTodo(id)),
+    removeTodo: id => dispatch(removeTodo(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList)

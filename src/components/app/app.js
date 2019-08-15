@@ -6,8 +6,8 @@ import InputTodo from "../../containers/input-todo.container";
 
 const App = () => {
   return (
-    <div>
-      <h2>App</h2>
+    <div className={'container'}>
+      <h2>Todo list</h2>
         <FilterSelect/>
         <TodoList/>
         <InputTodo/>

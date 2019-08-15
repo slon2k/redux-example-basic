@@ -5,7 +5,6 @@ import { Filters } from '../../actions'
 const FilterSelect = ({filter, setFilter}) => {
     return (
         <div className={'filter-select'}>
-            <h3>{filter}</h3>
             <button onClick={() => setFilter(Filters.SHOW_ALL)}>All</button>
             <button onClick={() => setFilter(Filters.SHOW_ACTIVE)}>Active</button>
             <button onClick={() => setFilter(Filters.SHOW_COMPLETED)}>Completed</button>
